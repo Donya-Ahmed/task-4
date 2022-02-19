@@ -1,0 +1,21 @@
+{{>header}}
+{{>navbar}}
+<section class="container">
+ <form method="post" class="mt-5" action="/editSingleLogic/{{user._id}}">
+        <div class="mb-3">
+            <input class="form-control" placeholder="name" name="id" disabled value="{{user._id}}">
+        </div>
+        <div class="mb-3">
+            <input class="form-control" placeholder="name" name="userName" value="{{user.name}}">
+        </div>
+        <div class="mb-3">
+            <input class="form-control" placeholder="balance" name="balance" value="{{user.balance}}">
+        </div>
+       
+        <div class="mb-3">
+            <button class="btn btn-primary">edit</button>
+        </div>
+    </form>
+</section>
+ 
+{{>footer}}

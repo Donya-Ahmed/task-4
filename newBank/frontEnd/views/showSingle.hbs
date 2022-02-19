@@ -1,0 +1,31 @@
+{{>header}}
+{{>navbar}}
+<section class="container">
+    <table class="table table-bordered my-4 table-dark">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Balance</th>
+            
+        </thead>
+        <tbody>
+           <tr>
+                <td>{{user._id}}</td>
+                <td>{{user.name}}</td>
+                 <td>{{user.balance}}</td>
+               
+            </tr>
+           
+        </tbody>
+
+    </table>
+    {{#if hasTran}}
+    {{#each user.transaction}}
+    <div class="alert alert-success">  type of transaction is:{{this.type}} and the value is: {{this.newBalance}} </div>
+    {{/each}}
+    {{/if}}
+
+
+  
+</section>
+{{>footer}}

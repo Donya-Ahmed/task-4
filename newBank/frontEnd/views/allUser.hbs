@@ -1,0 +1,47 @@
+{{>header}}
+{{>navbar}}
+<section class="container">
+    <table class="table table-bordered my-4">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Controls</th>
+        </thead>
+        <tbody>
+            {{#if   hasUsers}}
+             {{#each  users }}
+            <tr>
+                <td>{{this._id}}</td>
+                <td>{{this.name}}</td>
+                 <td>{{this.balance}}</td>
+                 <td>
+                       <a href="/addTran/{{this._id}}"  class="btn btn-success me-2">Add Transaction</a>
+                       <a href="/showSingle/{{this._id}}"  class="btn btn-primary me-2">Show</a>
+                       <a href="/editSingle/{{this._id}}"  class="btn btn-warning me-2">Edit</a>
+                      <a href="/delSingle/{{this._id}}"  class="btn btn-danger me-2">Delete</a>
+
+
+                 </td>
+
+            </tr>
+            {{/each}}
+           
+
+            {{else}}
+             <tr>
+                <td colspan="4" class="alert alert-danger text-center"> No tasks yet!</td>
+            </tr>
+            {{/if}}
+           
+        </tbody>
+
+    </table>
+    <div class="mt-5" >
+        <form method="post" action="/delAll">
+            <button class="btn btn-danger">Delete all</button>
+
+        </form>
+    </div>
+</section>
+{{>footer}}
